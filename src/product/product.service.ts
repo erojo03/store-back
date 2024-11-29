@@ -11,6 +11,12 @@ export class ProductService {
     return await this.prisma.products.create({ data: createProductDto });
   }
 
+  async createMany(createManyProductsDto: CreateProductDto[]) {
+    return await this.prisma.products.createMany({
+      data: createManyProductsDto,
+    });
+  }
+
   async findAll() {
     return await this.prisma.products.findMany();
   }

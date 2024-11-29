@@ -21,6 +21,11 @@ export class ProductController {
     return this.productService.create(createProductDto);
   }
 
+  @Post('many')
+  createMany(@Body() createManyProductsDto: CreateProductDto[]) {
+    return this.productService.createMany(createManyProductsDto);
+  }
+
   @Get()
   findAll() {
     return this.productService.findAll();
